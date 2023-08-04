@@ -31,7 +31,7 @@ const Index = (): ReactElement | null => {
 			})}
 			<DontKnowContainer>
 				<SettingsLink href='settings'>Settings</SettingsLink>
-				<DontKnow onClick={onDontKnowClick}>Don&apost know</DontKnow>
+				<DontKnow onClick={onDontKnowClick}>Don&apos;t know</DontKnow>
 			</DontKnowContainer>
 		</ResponsesContainer>
 	</QuestionsContainer>

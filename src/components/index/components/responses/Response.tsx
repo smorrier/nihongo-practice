@@ -42,12 +42,15 @@ export default function Response({ response, ...props }: IProps): ReactElement {
 	}
 
 	const correctClass = useMemo(() => {
-		console.log(guess == response.answer, question?.wasCorrect)
-		if(guess == response.answer && question?.wasCorrect) {
-			return 'correct'
+		if(guess == response.answer) {
+			if(question?.wasCorrect) {
+				return 'correct'
+			} else {
+				return 'incorrect'
+			}
 		}
-		if(!question?.wasCorrect && guess == response.answer) {
-			return 'incorrect'
+		if(guess && question?.answer == response.answer) {
+			return 'correct'
 		}
 		return ''
 	}, [guess, response, question])

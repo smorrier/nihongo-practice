@@ -1,0 +1,92 @@
+[
+	{
+	  "id": 1,
+	  "hiragana": "おおい",
+	  "romaji": "Ooi",
+	  "english": "Many, a lot"
+	},
+	{
+	  "id": 2,
+	  "hiragana": "いえ",
+	  "romaji": "Ie",
+	  "english": "House, home"
+	},
+	{
+	  "id": 3,
+	  "hiragana": "でる",
+	  "romaji": "Deru",
+	  "english": "Go out, leave"
+	},
+	{
+	  "id": 4,
+	  "hiragana": "つかう",
+	  "romaji": "Tsukau",
+	  "english": "Use"
+	},
+	{
+	  "id": 5,
+	  "hiragana": "おもう",
+	  "romaji": "Omou",
+	  "english": "Think"
+	},
+	{
+	  "id": 6,
+	  "hiragana": "かう",
+	  "romaji": "Kau",
+	  "english": "Buy"
+	},
+	{
+	  "id": 7,
+	  "hiragana": "じかん",
+	  "romaji": "Jikan",
+	  "english": "Time"
+	},
+	{
+	  "id": 8,
+	  "hiragana": "しる",
+	  "romaji": "Shiru",
+	  "english": "Know"
+	},
+	{
+	  "id": 9,
+	  "hiragana": "おなじ",
+	  "romaji": "Onaji",
+	  "english": "Same"
+	},
+	{
+	  "id": 10,
+	  "hiragana": "あたらしい",
+	  "romaji": "Atarashii",
+	  "english": "New"
+	},
+	{
+	  "id": 11,
+	  "hiragana": "まだ",
+	  "romaji": "Mada",
+	  "english": "Still, yet"
+	},
+	{
+	  "id": 12,
+	  "hiragana": "あと",
+	  "romaji": "Ato",
+	  "english": "After, later"
+	},
+	{
+	  "id": 13,
+	  "hiragana": "すくない",
+	  "romaji": "Sukunai",
+	  "english": "A few, not many"
+	},
+	{
+	  "id": 14,
+	  "hiragana": "たかい",
+	  "romaji": "Takai",
+	  "english": "Expensive, tall, high"
+	},
+	{
+	  "id": 15,
+	  "hiragana": "こども",
+	  "romaji": "Kodomo",
+	  "english": "Child"
+	}
+  ]

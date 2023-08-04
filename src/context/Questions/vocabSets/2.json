@@ -1,0 +1,116 @@
+[
+	{
+	  "id": 16,
+	  "hiragana": "そう",
+	  "romaji": "Sou",
+	  "english": "Seems, I heard that"
+	},
+	{
+	  "id": 17,
+	  "hiragana": "もう",
+	  "romaji": "Mou",
+	  "english": "Already, yet"
+	},
+	{
+	  "id": 18,
+	  "hiragana": "がくせい",
+	  "romaji": "Gakusei",
+	  "english": "Student"
+	},
+	{
+	  "id": 19,
+	  "hiragana": "あつい",
+	  "romaji": "Atsui",
+	  "english": "Hot"
+	},
+	{
+	  "id": 20,
+	  "hiragana": "どうぞ",
+	  "romaji": "Douzo",
+	  "english": "Please, go ahead"
+	},
+	{
+	  "id": 21,
+	  "hiragana": "ごご",
+	  "romaji": "Gogo",
+	  "english": "Afternoon, PM"
+	},
+	{
+	  "id": 22,
+	  "hiragana": "ながい",
+	  "romaji": "Nagai",
+	  "english": "Long"
+	},
+	{
+	  "id": 23,
+	  "hiragana": "ほん",
+	  "romaji": "Hon",
+	  "english": "Book"
+	},
+	{
+	  "id": 24,
+	  "hiragana": "ことし",
+	  "romaji": "Kotoshi",
+	  "english": "This year"
+	},
+	{
+	  "id": 25,
+	  "hiragana": "よく",
+	  "romaji": "Yoku",
+	  "english": "Often, well"
+	},
+	{
+	  "id": 26,
+	  "hiragana": "どう",
+	  "romaji": "Dou",
+	  "english": "How?"
+	},
+	{
+	  "id": 27,
+	  "hiragana": "ことば",
+	  "romaji": "Kotoba",
+	  "english": "Word, language"
+	},
+	{
+	  "id": 28,
+	  "hiragana": "かお",
+	  "romaji": "Kao",
+	  "english": "Face"
+	},
+	{
+	  "id": 29,
+	  "hiragana": "おわる",
+	  "romaji": "Owaru",
+	  "english": "End, finish"
+	},
+	{
+	  "id": 30,
+	  "hiragana": "ひとつ",
+	  "romaji": "Hitotsu",
+	  "english": "One (thing)"
+	},
+	{
+	  "id": 31,
+	  "hiragana": "あげる",
+	  "romaji": "Ageru",
+	  "english": "Give, offer"
+	},
+	{
+	  "id": 32,
+	  "hiragana": "こう",
+	  "romaji": "Kou",
+	  "english": "Like this, in this way"
+	},
+	{
+	  "id": 33,
+	  "hiragana": "がっこう",
+	  "romaji": "Gakkou",
+	  "english": "School"
+	},
+	{
+	  "id": 34,
+	  "hiragana": "これる",
+	  "romaji": "Koreru",
+	  "english": "Be able to come"
+	}
+  ]

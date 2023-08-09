@@ -15,10 +15,8 @@ interface Props{
 
 export function SettingsProvider({ children }:Props) {
 	const [settings, setSettings] = useState<any>({})
-	console.log('here')
-	
+
 	useEffect(() => {
-		console.error('ehree', localStorage.getItem('settings'))
 		setSettings(JSON.parse((localStorage.getItem('settings')) || JSON.stringify({ set: "1", allowRomaji: "yes"})))
 	}, [])
 

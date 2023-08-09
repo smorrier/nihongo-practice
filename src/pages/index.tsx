@@ -2,14 +2,16 @@ import { DontKnow, DontKnowContainer, Question, QuestionsContainer } from "@/com
 import { Response, ResponsesContainer } from "@/components/index/components/responses";
 import { SettingsLink } from "@/components/index/index.styled";
 import { QuestionProvider, useQuestion } from "@/context/Questions/useQuestions";
-import { SettingsProvider } from "@/context/useSettings";
 import React, { ReactElement } from "react";
 
 const Index = (): ReactElement | null => {
-	const { question, goNext, guess } = useQuestion()
+	const { question, respond, guess, goNext } = useQuestion()
 
 	const onDontKnowClick = () => {
-		goNext()
+		if(guess || guess != undefined) {
+			return goNext()
+		}
+		respond('')
 	}
 
 	if(!question) {
@@ -39,11 +41,9 @@ const Index = (): ReactElement | null => {
 
 const WrappedIndex = (): ReactElement => {
 	return (
-		<SettingsProvider>
-			<QuestionProvider>
-				<Index />
-			</QuestionProvider>
-		</SettingsProvider>
+		<QuestionProvider>
+			<Index />
+		</QuestionProvider>
 	)
 }
 

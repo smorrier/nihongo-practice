@@ -2,6 +2,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import set1 from './vocabSets/1.json'
 import set2 from './vocabSets/2.json'
 import set3 from './vocabSets/3.json'
+import { useSettings } from '../useSettings'
+const setData = [set1, set2, set3]
 export const sets = ['1', '2', '3']
 
 export enum QuestionTypes {
@@ -23,13 +25,13 @@ interface Question {
 }
 export type PotentialAnswer = { answer: string, question: string } & VocabEntry 
 
-const defaultVocab: Array<VocabEntry> = set3
+const defaultVocab: Array<VocabEntry> = set1
 
 const QuestionContext = createContext<{ 
 	question?: Question,
-	guess: string,
+	guess?: string,
 	respond: (x: string) => boolean,
-	goNext: () => void
+	goNext: (x?: string) => void
 }>({ guess: '', respond: (x) => Boolean(x), goNext: () => {} })
 
 export function useQuestion() {
@@ -49,8 +51,17 @@ const randomQuestionType = () => {
 }
 
 export function QuestionProvider({ children }:Props) {
+	return (
+		<InnerQuestionProvider>
+			{children}
+		</InnerQuestionProvider>
+	)
+}
+
+function InnerQuestionProvider({ children }:Props) {
+	const { settings } = useSettings()
 	const [vocab, setVocab] = useState(defaultVocab)
-	const [guess, setGuess] = useState<string>('')
+	const [guess, setGuess] = useState<string | undefined>()
 	const [question, setQuestion] = useState<Question>({ answer: '', potentialAnswers: [], question: '', type: '', wasCorrect: false})
 	const [questionCount, setQuestionCount] = useState<number>(0)
 	const [questionResponseMap, setQuestionResponseMap] = useState<{ 
@@ -58,6 +69,10 @@ export function QuestionProvider({ children }:Props) {
 			[reseponseType: string]: boolean 
 		}
 	}>({})
+
+	useEffect(() => {
+		setVocab(setData[parseInt(settings.set || "1") - 1])
+	}, [settings])
 
 	useEffect(() => {
 		const questionType = randomQuestionType()
@@ -111,7 +126,7 @@ export function QuestionProvider({ children }:Props) {
 			question,
 			wasCorrect: false
 		})
-	}, [questionResponseMap, questionCount])
+	}, [questionResponseMap, questionCount, vocab])
 
 	const respond = (guess: string) => {
 		setGuess(guess)
@@ -120,8 +135,8 @@ export function QuestionProvider({ children }:Props) {
 		return wasCorrect
 	}
 
-	const goNext = () => {
-		setGuess('')
+	const goNext = (guess?: string) => {
+		setGuess(guess)
 		setQuestionCount(questionCount + 1)
 	}
 	

@@ -14,7 +14,6 @@ const _Button = styled.button<{ guess: boolean | string }>`
 	cursor: pointer;
 	padding: ${(props) => props.theme.screenSize != 'mobile' ? '50px' : '8px' } !important;
 	${(props) => {
-		console.log(props.guess)
 		if(props.guess == 'correct') {
 			return `background-color: #428d53!important;`
 		} else if (props.guess == 'incorrect'){
@@ -34,7 +33,7 @@ export default function Response({ response, ...props }: IProps): ReactElement {
 	const { respond, guess, question, goNext } = useQuestion()
 	const { settings } = useSettings()
 	const onClick = (e: any) => {
-		if(guess) {
+		if(guess || guess != undefined) {
 			return goNext()
 		}
 		props.onClick?.(e)
@@ -49,7 +48,7 @@ export default function Response({ response, ...props }: IProps): ReactElement {
 				return 'incorrect'
 			}
 		}
-		if(guess && question?.answer == response.answer) {
+		if(guess !== undefined && question?.answer == response.answer) {
 			return 'correct'
 		}
 		return ''

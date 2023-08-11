@@ -1,0 +1,116 @@
+[
+	{
+	  "id": 54,
+	  "hiragana": "ちかい",
+	  "romaji": "Chikai",
+	  "english": "Near, close"
+	},
+	{
+	  "id": 55,
+	  "hiragana": "いれる",
+	  "romaji": "Ireru",
+	  "english": "Put in, insert"
+	},
+	{
+	  "id": 56,
+	  "hiragana": "おしえる",
+	  "romaji": "Oshieru",
+	  "english": "Teach, instruct"
+	},
+	{
+	  "id": 57,
+	  "hiragana": "あう",
+	  "romaji": "Au",
+	  "english": "Meet, see each other"
+	},
+	{
+	  "id": 58,
+	  "hiragana": "あたま",
+	  "romaji": "Atama",
+	  "english": "Head"
+	},
+	{
+	  "id": 59,
+	  "hiragana": "うる",
+	  "romaji": "Uru",
+	  "english": "Sell"
+	},
+	{
+	  "id": 60,
+	  "hiragana": "だいすぃ",
+	  "romaji": "Daisui",
+	  "english": "Big, large"
+	},
+	{
+	  "id": 61,
+	  "hiragana": "からだ",
+	  "romaji": "Karada",
+	  "english": "Body"
+	},
+	{
+	  "id": 62,
+	  "hiragana": "すぐ",
+	  "romaji": "Sugu",
+	  "english": "Immediately, right away"
+	},
+	{
+	  "id": 63,
+	  "hiragana": "とぶ",
+	  "romaji": "Tobu",
+	  "english": "Fly, jump"
+	},
+	{
+	  "id": 64,
+	  "hiragana": "とても",
+	  "romaji": "Totemo",
+	  "english": "Very, extremely"
+	},
+	{
+	  "id": 65,
+	  "hiragana": "だれ",
+	  "romaji": "Dare",
+	  "english": "Who"
+	},
+	{
+	  "id": 66,
+	  "hiragana": "よむ",
+	  "romaji": "Yomu",
+	  "english": "Read"
+	},
+	{
+	  "id": 67,
+	  "hiragana": "つぎ",
+	  "romaji": "Tsugi",
+	  "english": "Next"
+	},
+	{
+	  "id": 68,
+	  "hiragana": "ふるい",
+	  "romaji": "Furui",
+	  "english": "Old (not in use)"
+	},
+	{
+	  "id": 69,
+	  "hiragana": "しつもん",
+	  "romaji": "Shitsumon",
+	  "english": "Question"
+	},
+	{
+	  "id": 70,
+	  "hiragana": "ともだち",
+	  "romaji": "Tomodachi",
+	  "english": "Friend"
+	},
+	{
+	  "id": 71,
+	  "hiragana": "はやい",
+	  "romaji": "Hayai",
+	  "english": "Early, fast"
+	},
+	{
+	  "id": 72,
+	  "hiragana": "どれ",
+	  "romaji": "Dore",
+	  "english": "Which (of three or more)"
+	}
+  ]

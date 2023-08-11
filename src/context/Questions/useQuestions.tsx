@@ -3,7 +3,7 @@ import set1 from './vocabSets/1.json'
 import set2 from './vocabSets/2.json'
 import set3 from './vocabSets/3.json'
 import set4 from './vocabSets/4.json'
-import { useSettings } from '../useSettings'
+import { SettingsProvider, useSettings } from '../useSettings'
 const setData = [set1, set2, set3, set4]
 export const sets = ['1', '2', '3', '4']
 
@@ -53,9 +53,11 @@ const randomQuestionType = () => {
 
 export function QuestionProvider({ children }:Props) {
 	return (
-		<InnerQuestionProvider>
-			{children}
-		</InnerQuestionProvider>
+		<SettingsProvider>
+			<InnerQuestionProvider>
+				{children}
+			</InnerQuestionProvider>
+		</SettingsProvider>
 	)
 }
 

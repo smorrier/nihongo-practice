@@ -19,7 +19,9 @@ const Index = (): ReactElement | null => {
 	}
 
 	return <QuestionsContainer>
-		<Question>{question?.question}</Question>
+		<Question>
+			{question?.question}
+		</Question>
 		<ResponsesContainer>
 			{question.potentialAnswers.map((x: any, index) => {
 				return (

@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import set1 from './vocabSets/1.json'
 import set2 from './vocabSets/2.json'
 import set3 from './vocabSets/3.json'
@@ -18,10 +18,12 @@ interface VocabEntry {
 	english: string
 }
 interface Question {
+	vocabId: string | number,
 	type: string,
 	answer: string,
 	potentialAnswers: Array<Partial<PotentialAnswer>>,
 	question: string,
+	guess?: string,
 	wasCorrect: boolean,
 }
 export type PotentialAnswer = { answer: string, question: string } & VocabEntry 
@@ -30,10 +32,9 @@ const defaultVocab: Array<VocabEntry> = set1
 
 const QuestionContext = createContext<{ 
 	question?: Question,
-	guess?: string,
 	respond: (x: string) => boolean,
 	goNext: (x?: string) => void
-}>({ guess: '', respond: (x) => Boolean(x), goNext: () => {} })
+}>({ respond: (x) => Boolean(x), goNext: () => {} })
 
 export function useQuestion() {
 	return {
@@ -64,9 +65,7 @@ export function QuestionProvider({ children }:Props) {
 function InnerQuestionProvider({ children }:Props) {
 	const { settings } = useSettings()
 	const [vocab, setVocab] = useState(defaultVocab)
-	const [guess, setGuess] = useState<string | undefined>()
-	const [question, setQuestion] = useState<Question>({ answer: '', potentialAnswers: [], question: '', type: '', wasCorrect: false})
-	const [questionCount, setQuestionCount] = useState<number>(0)
+	const [question, setQuestion] = useState<Question>({ vocabId: '', answer: '', potentialAnswers: [], question: '', type: '', wasCorrect: false})
 	const [questionResponseMap, setQuestionResponseMap] = useState<{ 
 		[key: string | number]: { 
 			[reseponseType: string]: boolean 
@@ -74,14 +73,22 @@ function InnerQuestionProvider({ children }:Props) {
 	}>({})
 
 	useEffect(() => {
-		setVocab(setData[parseInt(settings.set || "1") - 1])
+		setVocab([setData[parseInt(settings.set || "1") - 1][0], setData[parseInt(settings.set || "1") - 1][1], setData[parseInt(settings.set || "1") - 1][2], setData[parseInt(settings.set || "1") - 1][3]])
 	}, [settings])
 
-	useEffect(() => {
+	const totalAnswered = useMemo(() => Object.values(questionResponseMap).reduce((accum, element) => accum + Object.keys(element).length, 0), [questionResponseMap])
+	const totalQuestions = useMemo(() => {
+		return vocab.length * Object.keys(QuestionTypes).length
+	}, [vocab])
+
+	const generateQuestion = () => {
+		if(totalQuestions == totalAnswered) {
+			return;
+		}
+
 		const questionType = randomQuestionType()
-		const cloneVocab = { ...vocab }
-		const randomIndex = (): number => {
-			const arr = Object.keys(cloneVocab)
+		const randomIndex = (vocab: Array<VocabEntry>): number => {
+			const arr = Object.keys(vocab)
 			return parseInt(arr[Math.floor(Math.random() * arr.length)])
 		}
 		const getQuestionAnswerByIndex = (index: number): PotentialAnswer => {
@@ -102,9 +109,17 @@ function InnerQuestionProvider({ children }:Props) {
 			}
 		}
 
-		let index = randomIndex()
-		while(questionResponseMap[vocab[index].id]?.[questionType]) {
-			index = randomIndex()
+		const cloneVocab = { ...vocab }
+		const cloneVocab2 = { ...cloneVocab }
+		let index
+		while(true) {
+			index = randomIndex(cloneVocab2)
+			console.log({ index })
+			if(questionResponseMap[vocab[index].id]?.[questionType]) {
+				delete cloneVocab2[index]
+			} else {
+				break;
+			}
 		}
 
 		const { answer, question, english, romaji } = getQuestionAnswerByIndex(index)
@@ -116,34 +131,50 @@ function InnerQuestionProvider({ children }:Props) {
 		delete cloneVocab[index]
 
 		for(let i = 0; i < 3; i++ ) {
-			const index = randomIndex()
+			const index = randomIndex(cloneVocab)
 			const { answer, english, romaji } = getQuestionAnswerByIndex(index)
 			potentialAnswers.push({ answer, english, romaji })
 			delete cloneVocab[index]
 		}
 
 		setQuestion({
+			vocabId: vocab[index].id,
 			answer,
 			potentialAnswers: potentialAnswers.sort(() => (Math.random() > .5) ? 1 : -1),
 			type: questionType,
 			question,
 			wasCorrect: false
 		})
-	}, [questionResponseMap, questionCount, vocab])
+	}
+
+	useEffect(() => {
+		generateQuestion()
+	}, [vocab])
+
+	useEffect(() => {
+		if(totalQuestions == totalAnswered) {
+			setQuestionResponseMap({})
+		}
+	}, [totalQuestions, totalAnswered])
 
 	const respond = (guess: string) => {
-		setGuess(guess)
 		const wasCorrect = guess === question?.answer
-		setQuestion({ ...question, wasCorrect })
+		setQuestion({ ...question, wasCorrect, guess })
+		if(wasCorrect) {
+			const copy = { ...questionResponseMap }
+			copy[question.vocabId] = { ...(copy[question.vocabId] || {}) }
+			copy[question.vocabId][question.type] = true
+			setQuestionResponseMap(copy)
+		}
 		return wasCorrect
 	}
 
 	const goNext = (guess?: string) => {
-		setGuess(guess)
-		setQuestionCount(questionCount + 1)
+		setQuestion({ ...question, guess })
+		generateQuestion()
 	}
 	
-	return <QuestionContext.Provider value={{ question, guess, respond, goNext }}>
+	return <QuestionContext.Provider value={{ question, respond, goNext }}>
 		{children}
 	</QuestionContext.Provider>
 }

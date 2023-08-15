@@ -5,7 +5,8 @@ import { QuestionProvider, useQuestion } from "@/context/Questions/useQuestions"
 import React, { ReactElement } from "react";
 
 const Index = (): ReactElement | null => {
-	const { question, respond, guess, goNext } = useQuestion()
+	const { question, respond, goNext } = useQuestion()
+	const guess = question?.guess
 
 	const onDontKnowClick = () => {
 		if(guess || guess != undefined) {

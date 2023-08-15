@@ -30,7 +30,9 @@ const _Button = styled.button<{ guess: boolean | string }>`
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> { response: PotentialAnswer }
 
 export default function Response({ response, ...props }: IProps): ReactElement {
-	const { respond, guess, question, goNext } = useQuestion()
+	const { respond, question, goNext } = useQuestion()
+	const guess = question?.guess
+	
 	const { settings } = useSettings()
 	const onClick = (e: any) => {
 		if(guess || guess != undefined) {

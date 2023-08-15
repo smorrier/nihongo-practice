@@ -21,7 +21,6 @@ export function SettingsProvider({ children }:Props) {
 	}, [])
 
 	useEffect(() => {
-		console.log(settings)
 		if(Object.keys(settings).length) {
 			localStorage.setItem('settings', JSON.stringify(settings))
 		}

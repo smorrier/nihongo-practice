@@ -1,4 +1,5 @@
-import { PotentialAnswer, QuestionTypes, useQuestion } from '@/context/Questions/useQuestions';
+import { useQuestion } from '@/context/Questions/useQuestions';
+import { PotentialAnswer, QuestionTypes } from '@/context/Questions/useQuestions.type';
 import { useSettings } from '@/context/useSettings';
 import { ButtonHTMLAttributes, ReactElement, useMemo } from 'react';
 import styled from 'styled-components';
@@ -32,7 +33,7 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> { response: Pot
 export default function Response({ response, ...props }: IProps): ReactElement {
 	const { respond, question, goNext } = useQuestion()
 	const guess = question?.guess
-	
+
 	const { settings } = useSettings()
 	const onClick = (e: any) => {
 		if(guess || guess != undefined) {

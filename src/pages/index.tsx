@@ -1,4 +1,4 @@
-import { DontKnow, DontKnowContainer, Question, QuestionsContainer } from "@/components/index";
+import { Counter, DontKnow, DontKnowContainer, Question, QuestionsContainer } from "@/components/index";
 import { Response, ResponsesContainer } from "@/components/index/components/responses";
 import { SettingsLink } from "@/components/index/index.styled";
 import { QuestionProvider, useQuestion } from "@/context/Questions/useQuestions";
@@ -23,6 +23,7 @@ const Index = (): ReactElement | null => {
 		<Question>
 			{question?.question}
 		</Question>
+		<Counter />
 		<ResponsesContainer>
 			{question.potentialAnswers.map((x: any, index) => {
 				return (

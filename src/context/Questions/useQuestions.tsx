@@ -13,8 +13,10 @@ const defaultVocab: Array<VocabEntry> = set1
 const QuestionContext = createContext<{ 
 	question?: Question,
 	respond: (x: string) => boolean,
-	goNext: () => void
-}>({ respond: (x) => Boolean(x), goNext: () => {} })
+	goNext: () => void,
+	questionsAnswered: number,
+	totalQuestions: number
+}>({ respond: (x) => Boolean(x), goNext: () => {}, questionsAnswered: 0, totalQuestions: 0 })
 
 export function useQuestion() {
 	return useContext(QuestionContext)
@@ -30,9 +32,10 @@ export function QuestionProvider({ children }: { children: any }) {
 	)
 }
 
-function InnerQuestionProvider({ children }:Props) {
+function InnerQuestionProvider({ children }: { children: any }) {
 	const { settings } = useSettings()
 	const [vocab, setVocab] = useState(defaultVocab)
+	const [questionsAnswered, setQuestionsAnswered] = useState(0)
 	const [series, setSeries] = useState<Array<{ type: string, word: VocabEntry, index: number }>>([])
 	const generateQuestionSeries = () => {
 		const series: any = []
@@ -43,7 +46,11 @@ function InnerQuestionProvider({ children }:Props) {
 		})
 		setSeries(series.sort(() => (Math.random() > .5) ? 1 : -1))
 	}
-	const reset = generateQuestionSeries
+	const totalQuestions = useMemo(() => Object.values(QuestionTypes).length * vocab.length, [vocab])
+	const reset = () => {
+		generateQuestionSeries()
+		setQuestionsAnswered(0)
+	}
 	useEffect(generateQuestionSeries, [vocab])
 
 	const [question, setQuestion] = useState<Question>({ vocabId: '', answer: '', potentialAnswers: [], question: '', type: '', wasCorrect: false})
@@ -94,9 +101,9 @@ function InnerQuestionProvider({ children }:Props) {
 			setQuestion({
 				vocabId: word.word.id,
 				answer: potentialAnswers[0].answer,
+				question: potentialAnswers[0].question,
 				potentialAnswers: potentialAnswers.sort(() => (Math.random() > .5) ? 1 : -1),
 				type: questionType,
-				question: potentialAnswers[0].question,
 				wasCorrect: false
 			})
 		}
@@ -108,13 +115,20 @@ function InnerQuestionProvider({ children }:Props) {
 
 	const respond = (guess: string) => {
 		const wasCorrect = guess === question?.answer
+		if(wasCorrect) {
+			setQuestionsAnswered(questionsAnswered + 1)
+		}
 		setQuestion({ ...question, wasCorrect, guess })
 		return wasCorrect
 	}
 
 	const goNext = () => {
 		const newSeries = [...series]
-		newSeries.pop()
+		if(question.wasCorrect) {
+			newSeries.pop()
+		} else {
+			newSeries.sort(() => (Math.random() > .5) ? 1 : -1)
+		}
 		if(newSeries.length) {
 			setSeries(newSeries)
 		} else {
@@ -122,7 +136,7 @@ function InnerQuestionProvider({ children }:Props) {
 		}
 	}
 	
-	return <QuestionContext.Provider value={{ question, respond, goNext }}>
+	return <QuestionContext.Provider value={{ question, respond, goNext, questionsAnswered, totalQuestions }}>
 		{children}
 	</QuestionContext.Provider>
 }

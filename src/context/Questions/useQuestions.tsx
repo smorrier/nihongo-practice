@@ -3,10 +3,11 @@ import set1 from './vocabSets/1.json'
 import set2 from './vocabSets/2.json'
 import set3 from './vocabSets/3.json'
 import set4 from './vocabSets/4.json'
+import set5 from './vocabSets/5.json'
 import { SettingsProvider, useSettings } from '../useSettings'
 import { PotentialAnswer, Question, QuestionTypes, VocabEntry } from './useQuestions.type'
-const setData = [set1, set2, set3, set4]
-export const sets = ['1', '2', '3', '4']
+const setData = [set1, set2, set3, set4, set5]
+export const sets = ['1', '2', '3', '4', '5']
 
 const defaultVocab: Array<VocabEntry> = set1
 

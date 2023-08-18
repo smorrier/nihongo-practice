@@ -1,15 +1,11 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import set1 from './vocabSets/1.json'
-import set2 from './vocabSets/2.json'
-import set3 from './vocabSets/3.json'
-import set4 from './vocabSets/4.json'
-import set5 from './vocabSets/5.json'
 import { SettingsProvider, useSettings } from '../useSettings'
 import { PotentialAnswer, Question, QuestionTypes, VocabEntry } from './useQuestions.type'
-const setData = [set1, set2, set3, set4, set5]
+import setData from './vocabSets'
+
 export const sets = ['1', '2', '3', '4', '5']
 
-const defaultVocab: Array<VocabEntry> = set1
+const defaultVocab: Array<VocabEntry> = setData[0]
 
 const QuestionContext = createContext<{ 
 	question?: Question,

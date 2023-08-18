@@ -1,7 +1,9 @@
-import { Counter, DontKnow, DontKnowContainer, Question, QuestionsContainer } from "@/components/index";
+import Icon from "@/components/Icon";
+import { Counter, DontKnow, DontKnowContainer, IconContainer, Question, QuestionsContainer } from "@/components/index";
 import { Response, ResponsesContainer } from "@/components/index/components/responses";
-import { SettingsLink } from "@/components/index/index.styled";
 import { QuestionProvider, useQuestion } from "@/context/Questions/useQuestions";
+import { faCog, faList } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 import React, { ReactElement } from "react";
 
 const Index = (): ReactElement | null => {
@@ -36,7 +38,14 @@ const Index = (): ReactElement | null => {
 				)
 			})}
 			<DontKnowContainer>
-				<SettingsLink href='settings'>Settings</SettingsLink>
+				<IconContainer>
+					<Link href='settings'>
+						<Icon icon={faCog} />
+					</Link>
+					<Link href='list'>
+						<Icon icon={faList} />
+					</Link>
+				</IconContainer>
 				<DontKnow onClick={onDontKnowClick}>Don&apos;t know</DontKnow>
 			</DontKnowContainer>
 		</ResponsesContainer>

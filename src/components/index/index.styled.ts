@@ -16,15 +16,14 @@ const DontKnow = styled.button`
 	cursor: pointer;
 `
 
-const SettingsLink = styled.a`
-	color: #417deb;
-	margin: auto 0;
-	padding: 12px 0;
-	cursor: pointer;
+const IconContainer = styled.div`
+	display: flex;
+	gap: 12px;
+	align-items: center;
 `
 
 export {
 	DontKnowContainer,
 	DontKnow,
-	SettingsLink
+	IconContainer,
 }

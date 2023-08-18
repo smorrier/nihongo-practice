@@ -1,15 +1,14 @@
 
 import { Container, PracticeLink, Select } from "@/components/settings";
-import { sets } from "@/context/Questions/useQuestions";
+import { sets } from "@/context/ActiveSet/useActiveSet";
 import { SettingsProvider, useSettings } from "@/context/useSettings";
-import React, { ReactElement, useEffect } from "react";
+import React, { ReactElement } from "react";
 
 const Settings = (): ReactElement | null => {
 	const { settings, setSettings } = useSettings()
 	const onChange = (e: any) => {
-		setSettings({ [e.target.name]: e.target.value })
+		setSettings({ ...settings, [e.target.name]: e.target.value })
 	}
-
 	
 	if(!Object.keys(settings).length) {
 		return null

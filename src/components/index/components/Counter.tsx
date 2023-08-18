@@ -22,7 +22,7 @@ const CounterInner = styled.div<{ width?: number }>`
 
 export default function Counter() {
 	const { totalQuestions, questionsAnswered } = useQuestion()
-	console.log((questionsAnswered / totalQuestions))
+
 	return (<CounterWrapper>
 		<CounterInner width={(questionsAnswered / totalQuestions) * 100} />
 	</CounterWrapper>)

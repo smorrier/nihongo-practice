@@ -1,11 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
-import { SettingsProvider, useSettings } from '../useSettings'
 import { PotentialAnswer, Question, QuestionTypes, VocabEntry } from './useQuestions.type'
-import setData from './vocabSets'
-
-export const sets = ['1', '2', '3', '4', '5']
-
-const defaultVocab: Array<VocabEntry> = setData[0]
+import { ActiveSetProvider, useActiveSet } from '../ActiveSet/useActiveSet'
 
 const QuestionContext = createContext<{ 
 	question?: Question,
@@ -21,47 +16,42 @@ export function useQuestion() {
 
 export function QuestionProvider({ children }: { children: any }) {
 	return (
-		<SettingsProvider>
+		<ActiveSetProvider>
 			<InnerQuestionProvider>
 				{children}
 			</InnerQuestionProvider>
-		</SettingsProvider>
+		</ActiveSetProvider>
 	)
 }
 
 function InnerQuestionProvider({ children }: { children: any }) {
-	const { settings } = useSettings()
-	const [vocab, setVocab] = useState(defaultVocab)
+	const { activeSet } = useActiveSet()
 	const [questionsAnswered, setQuestionsAnswered] = useState(0)
 	const [series, setSeries] = useState<Array<{ type: string, word: VocabEntry, index: number }>>([])
 	const generateQuestionSeries = () => {
 		const series: any = []
-		vocab.map((word, index) => {
+		activeSet.map((word, index) => {
 			Object.values(QuestionTypes).map((type) => {
 				series.push({ type, word, index })
 			})
 		})
 		setSeries(series.sort(() => (Math.random() > .5) ? 1 : -1))
 	}
-	const totalQuestions = useMemo(() => Object.values(QuestionTypes).length * vocab.length, [vocab])
+	const totalQuestions = useMemo(() => Object.values(QuestionTypes).length * activeSet.length, [activeSet])
 	const reset = () => {
 		generateQuestionSeries()
 		setQuestionsAnswered(0)
 	}
-	useEffect(generateQuestionSeries, [vocab])
+	useEffect(generateQuestionSeries, [activeSet])
 
 	const [question, setQuestion] = useState<Question>({ vocabId: '', answer: '', potentialAnswers: [], question: '', type: '', wasCorrect: false})
-
-	useEffect(() => {
-		setVocab(setData[parseInt(settings.set || "1") - 1])
-	}, [settings])
 
 	const generateQuestion = () => {
 		if(series.length) {
 			const word = series[series.length - 1]
 			const questionType = word.type
-			const randomIndex = (vocab: Array<VocabEntry>): number => {
-				const arr = Object.keys(vocab)
+			const randomIndex = (activeSet: Array<VocabEntry>): number => {
+				const arr = Object.keys(activeSet)
 				return parseInt(arr[Math.floor(Math.random() * arr.length)])
 			}
 			const getQuestionAnswerByIndex = (word: VocabEntry): PotentialAnswer => {
@@ -81,7 +71,7 @@ function InnerQuestionProvider({ children }: { children: any }) {
 
 			}
 
-			const cloneVocab = { ...vocab }
+			const cloneVocab = { ...activeSet }
 
 			let potentialAnswers = []
 			

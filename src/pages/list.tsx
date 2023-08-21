@@ -32,7 +32,7 @@ const List = (): ReactElement | null => {
 			<thead>
 				<tr>
 					<th>English</th>
-					{settings.allowRomaji == 'yes' &&<th>Romaji</th>}
+					{settings.allowRomaji == 'yes' && <th>Romaji</th>}
 					<th>Hiragana</th>
 				</tr>
 			</thead>
@@ -41,7 +41,7 @@ const List = (): ReactElement | null => {
 					return (
 						<tr key={`vocab-list-${index}`}>
 							<td>{vocab.english}</td>
-							<td>{vocab.romaji}</td>
+							{settings.allowRomaji == 'yes' && <td>{vocab.romaji}</td>}
 							<td>{vocab.hiragana}</td>
 						</tr>
 					)

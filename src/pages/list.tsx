@@ -41,7 +41,7 @@ const List = (): ReactElement | null => {
 					return (
 						<tr key={`vocab-list-${index}`}>
 							<td>{vocab.english}</td>
-							{settings.allowRomaji == 'yes' && <td>{vocab.romaji}</td>}
+							{(settings.allowRomaji || 'yes') == 'yes' && <td>{vocab.romaji}</td>}
 							<td>{vocab.hiragana}</td>
 						</tr>
 					)

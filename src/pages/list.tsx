@@ -15,7 +15,7 @@ const List = (): ReactElement | null => {
 	}, [settings.set])
 
 	const activeSet = useMemo(() => {
-		return setData[parseInt(settings.set || "1") - 1] || []
+		return setData[parseInt(set || "1") - 1] || []
 	}, [set])
 
 	const onChange = (e: any) => {

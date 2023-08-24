@@ -1,0 +1,170 @@
+[
+	{
+	  "id": 111,
+	  "hiragana": "さがす",
+	  "romaji": "Sagasu",
+	  "english": "Search, look for"
+	},
+	{
+	  "id": 112,
+	  "hiragana": "かみ",
+	  "romaji": "Kami",
+	  "english": "Paper"
+	},
+	{
+	  "id": 113,
+	  "hiragana": "うたう",
+	  "romaji": "Utau",
+	  "english": "Sing"
+	},
+	{
+	  "id": 114,
+	  "hiragana": "おそい",
+	  "romaji": "Osoi",
+	  "english": "Late, slow"
+	},
+	{
+	  "id": 115,
+	  "hiragana": "くび",
+	  "romaji": "Kubi",
+	  "english": "Neck"
+	},
+	{
+	  "id": 116,
+	  "hiragana": "はやい",
+	  "romaji": "Hayai",
+	  "english": "Fast, early"
+	},
+	{
+	  "id": 117,
+	  "hiragana": "いっしょに",
+	  "romaji": "Issho ni",
+	  "english": "Together"
+	},
+	{
+	  "id": 118,
+	  "hiragana": "こんげつ",
+	  "romaji": "Kongetsu",
+	  "english": "This month"
+	},
+	{
+	  "id": 119,
+	  "hiragana": "あそぶ",
+	  "romaji": "Asobu",
+	  "english": "Play"
+	},
+	{
+	  "id": 120,
+	  "hiragana": "とおい",
+	  "romaji": "Tooi",
+	  "english": "Far"
+	},
+	{
+	  "id": 121,
+	  "hiragana": "よわい",
+	  "romaji": "Yowai",
+	  "english": "Weak"
+	},
+	{
+	  "id": 122,
+	  "hiragana": "みみ",
+	  "romaji": "Mimi",
+	  "english": "Ear"
+	},
+	{
+	  "id": 123,
+	  "hiragana": "すわる",
+	  "romaji": "Suwaru",
+	  "english": "Sit"
+	},
+	{
+	  "id": 124,
+	  "hiragana": "みぎ",
+	  "romaji": "Migi",
+	  "english": "Right"
+	},
+	{
+	  "id": 125,
+	  "hiragana": "あびる",
+	  "romaji": "Abiru",
+	  "english": "Take a shower"
+	},
+	{
+	  "id": 126,
+	  "hiragana": "かた",
+	  "romaji": "Kata",
+	  "english": "Shoulder"
+	},
+	{
+	  "id": 127,
+	  "hiragana": "けす",
+	  "romaji": "Kesu",
+	  "english": "Turn off, erase"
+	},
+	{
+	  "id": 128,
+	  "hiragana": "げんき",
+	  "romaji": "Genki",
+	  "english": "Healthy, fine"
+	},
+	{
+	  "id": 129,
+	  "hiragana": "ぜんぶ",
+	  "romaji": "Zenbu",
+	  "english": "All, everything"
+	},
+	{
+	  "id": 130,
+	  "hiragana": "きょねん",
+	  "romaji": "Kyonen",
+	  "english": "Last year"
+	},
+	{
+	  "id": 131,
+	  "hiragana": "ひく",
+	  "romaji": "Hiku",
+	  "english": "Play (a musical instrument)"
+	},
+	{
+	  "id": 132,
+	  "hiragana": "としょかん",
+	  "romaji": "Toshokan",
+	  "english": "Library"
+	},
+	{
+	  "id": 133,
+	  "hiragana": "あげる",
+	  "romaji": "Ageru",
+	  "english": "Raise, Lift"
+	},
+	{
+	  "id": 134,
+	  "hiragana": "みどり",
+	  "romaji": "Midori",
+	  "english": "Green"
+	},
+	{
+	  "id": 135,
+	  "hiragana": "うで",
+	  "romaji": "Ude",
+	  "english": "Arm"
+	},
+	{
+	  "id": 136,
+	  "hiragana": "どあ",
+	  "romaji": "Doa",
+	  "english": "Door"
+	},
+	{
+	  "id": 137,
+	  "hiragana": "おんなのこ",
+	  "romaji": "Onnanoko",
+	  "english": "Girl"
+	},
+	{
+	  "id": 138,
+	  "hiragana": "おとこのこ",
+	  "romaji": "Otokonoko",
+	  "english": "Boy"
+	}
+  ]

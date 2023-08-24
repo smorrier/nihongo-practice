@@ -1,5 +1,7 @@
 
-import { Container, PracticeLink, Select } from "@/components/settings";
+import Container from "@/components/Container";
+import Select from "@/components/Select";
+import { PracticeLink } from "@/components/settings";
 import { sets } from "@/context/ActiveSet/useActiveSet";
 import { SettingsProvider, useSettings } from "@/context/useSettings";
 import React, { ReactElement } from "react";

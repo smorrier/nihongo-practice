@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import '../styles/globals.css'
 import "@fortawesome/fontawesome-svg-core/styles.css"; 
 import { config } from "@fortawesome/fontawesome-svg-core";
+import AppContainer from '@/components/AppContainer'
 
 config.autoAddCss = false; 
 
@@ -20,7 +21,9 @@ function ScreenThemeProvider(props: any) {
 export default function App({ Component, pageProps }: AppProps) {
 	return <ScreenSizeProvider>
 		<ScreenThemeProvider>
-			<Component {...pageProps} />
+			<AppContainer>
+				<Component {...pageProps} />
+			</AppContainer>
 		</ScreenThemeProvider>
 	</ScreenSizeProvider>
 }

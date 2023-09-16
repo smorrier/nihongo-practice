@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { SettingsProvider, useSettings } from '../useSettings'
 import setData from './vocabSets'
 import { VocabEntry } from '../Questions/useQuestions.type'
-export const sets = ['1', '2', '3', '4', '5', '6', '7']
+export const sets = ['1', '2', '3', '4', '5', '6', '7', '8']
 
 const defaultVocab: Array<VocabEntry> = setData[0]
 

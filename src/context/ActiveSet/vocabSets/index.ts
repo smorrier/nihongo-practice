@@ -18,5 +18,6 @@ export default [
 	set6,
 	set7,
 	set8,
+	set9,
 	set10,
 ]

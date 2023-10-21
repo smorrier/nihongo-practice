@@ -9,6 +9,7 @@ import set8 from './8.json'
 import set9 from './9.json'
 import set10 from './10.json'
 import set11 from './11.json'
+import set12 from './12.json'
 
 export default [
 	set1,
@@ -22,4 +23,5 @@ export default [
 	set9,
 	set10,
 	set11,
+	set12,
 ]

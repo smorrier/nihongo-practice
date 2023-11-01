@@ -1,0 +1,98 @@
+[
+	{
+	  "id": 233,
+	  "hiragana": "はいる",
+	  "romaji": "Hairu",
+	  "english": "Enter"
+	},
+	{
+	  "id": 234,
+	  "hiragana": "ひらく",
+	  "romaji": "Hiraku",
+	  "english": "Open"
+	},
+	{
+	  "id": 235,
+	  "hiragana": "しめる",
+	  "romaji": "Shimeru",
+	  "english": "Tighten, fasten"
+	},
+	{
+	  "id": 236,
+	  "hiragana": "まずい",
+	  "romaji": "Mazui",
+	  "english": "Bad, unpalatable"
+	},
+	{
+	  "id": 237,
+	  "hiragana": "くもる",
+	  "romaji": "Kumoru",
+	  "english": "Become cloudy"
+	},
+	{
+	  "id": 238,
+	  "hiragana": "だめ",
+	  "romaji": "Dame",
+	  "english": "No good, useless"
+	},
+	{
+	  "id": 239,
+	  "hiragana": "そば",
+	  "romaji": "Soba",
+	  "english": "Side, vicinity"
+	},
+	{
+	  "id": 240,
+	  "hiragana": "こっち",
+	  "romaji": "Kocchi",
+	  "english": "This way, here"
+	},
+	{
+	  "id": 241,
+	  "hiragana": "かわく",
+	  "romaji": "Kawaku",
+	  "english": "Be thirsty"
+	},
+	{
+	  "id": 242,
+	  "hiragana": "なおる",
+	  "romaji": "Naoru",
+	  "english": "Get better, recover"
+	},
+	{
+	  "id": 243,
+	  "hiragana": "みたい",
+	  "romaji": "Mitai",
+	  "english": "Like, similar to"
+	},
+	{
+	  "id": 244,
+	  "hiragana": "ひとりで",
+	  "romaji": "Hitori de",
+	  "english": "Alone, by oneself"
+	},
+	{
+	  "id": 245,
+	  "hiragana": "ほそい",
+	  "romaji": "Hosoi",
+	  "english": "Narrow, thin"
+	},
+	{
+	  "id": 246,
+	  "hiragana": "ぜんぜん",
+	  "romaji": "Zenzen",
+	  "english": "Not at all, completely"
+	},
+	{
+	  "id": 247,
+	  "hiragana": "ほとんど",
+	  "romaji": "Hotondo",
+	  "english": "Almost, hardly"
+	},
+	{
+	  "id": 248,
+	  "hiragana": "かんたん",
+	  "romaji": "Kantan",
+	  "english": "Simple, easy"
+	}
+  ]

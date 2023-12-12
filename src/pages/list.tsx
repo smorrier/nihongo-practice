@@ -2,7 +2,7 @@
 import { PracticeLink } from "@/components/settings";
 import { sets } from "@/context/ActiveSet/useActiveSet";
 import { SettingsProvider, useSettings } from "@/context/useSettings";
-import React, { ReactElement, useMemo, useState } from "react";
+import React, { ReactElement, useEffect, useMemo, useState } from "react";
 import setData from "@/context/ActiveSet/vocabSets"
 import { ListTable, TableWrapper } from "@/components/list";
 import Container from "@/components/Container";
@@ -11,8 +11,12 @@ import Input from "@/components/Input";
 
 const List = (): ReactElement | null => {
 	const { settings } = useSettings()
-	const [set, setSet] = useState(settings.set)
+	const [set, setSet] = useState<string>('')
 	const [search, setSearch] = useState('')
+
+	useEffect(() => {
+		setSet(settings.set)
+	}, [settings.set])
 
 	const activeSet = useMemo(() => {
 		let _activeSet = setData[parseInt(set || "1") - 1] || []
@@ -39,7 +43,7 @@ const List = (): ReactElement | null => {
 	return <Container>
 		<label>Set</label>
 		<Select value={set} name='set' onChange={onChange}>
-			<option>All</option>
+			<option value="">All</option>
 			{sets.map((set) => (<option key={set}>{set}</option>))}
 		</Select>
 		<label>Search</label>

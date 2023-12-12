@@ -2,7 +2,7 @@
 import Container from "@/components/Container";
 import Select from "@/components/Select";
 import { PracticeLink } from "@/components/settings";
-import { sets } from "@/context/ActiveSet/useActiveSet";
+import { vocabSetOptions } from "@/context/ActiveSet/vocabSets";
 import { SettingsProvider, useSettings } from "@/context/useSettings";
 import React, { ReactElement } from "react";
 
@@ -20,7 +20,7 @@ const Settings = (): ReactElement | null => {
 		<label>Set</label>
 		<Select value={settings.set as string} name='set' onChange={onChange}>
 			<option />
-			{sets.map((set) => (<option key={set}>{set}</option>))}
+			{vocabSetOptions.map((set) => (<option key={set}>{set}</option>))}
 		</Select>
 		<label>Show Romaji</label>
 		<Select value={settings.allowRomaji as string} name='allowRomaji' onChange={onChange}>

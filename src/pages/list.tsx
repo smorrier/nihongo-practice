@@ -1,9 +1,8 @@
 
 import { PracticeLink } from "@/components/settings";
-import { sets } from "@/context/ActiveSet/useActiveSet";
 import { SettingsProvider, useSettings } from "@/context/useSettings";
 import React, { ReactElement, useEffect, useMemo, useState } from "react";
-import setData from "@/context/ActiveSet/vocabSets"
+import setData, { vocabSetOptions } from "@/context/ActiveSet/vocabSets"
 import { ListTable, TableWrapper } from "@/components/list";
 import Container from "@/components/Container";
 import Select from "@/components/Select";
@@ -44,7 +43,7 @@ const List = (): ReactElement | null => {
 		<label>Set</label>
 		<Select value={set} name='set' onChange={onChange}>
 			<option value="">All</option>
-			{sets.map((set) => (<option key={set}>{set}</option>))}
+			{vocabSetOptions.map((set) => (<option key={set}>{set}</option>))}
 		</Select>
 		<label>Search</label>
 		<Input value={search} name='search' onChange={(e) => setSearch(e.target.value)} />

@@ -1,0 +1,110 @@
+[
+	{
+	  "id": 266,
+	  "hiragana": "おねがい",
+	  "romaji": "Onegai",
+	  "english": "Please"
+	},
+	{
+	  "id": 267,
+	  "hiragana": "さき",
+	  "romaji": "Saki",
+	  "english": "Before, ahead"
+	},
+	{
+	  "id": 268,
+	  "hiragana": "さむい",
+	  "romaji": "Samui",
+	  "english": "Cold (weather)"
+	},
+	{
+	  "id": 269,
+	  "hiragana": "した",
+	  "romaji": "Shita",
+	  "english": "Below"
+	},
+	{
+	  "id": 270,
+	  "hiragana": "おとな",
+	  "romaji": "Otona",
+	  "english": "Adult"
+	},
+	{
+	  "id": 271,
+	  "hiragana": "だす",
+	  "romaji": "Dasu",
+	  "english": "Take out"
+	},
+	{
+	  "id": 272,
+	  "hiragana": "ちち",
+	  "romaji": "Chichi",
+	  "english": "Father"
+	},
+	{
+	  "id": 273,
+	  "hiragana": "はは",
+	  "romaji": "Haha",
+	  "english": "Mother"
+	},
+	{
+	  "id": 274,
+	  "hiragana": "つき",
+	  "romaji": "Tsuki",
+	  "english": "Moon"
+	},
+	{
+	  "id": 275,
+	  "hiragana": "つめたい",
+	  "romaji": "Tsumetai",
+	  "english": "Cold (to touch)"
+	},
+	{
+	  "id": 276,
+	  "hiragana": "て",
+	  "romaji": "Te",
+	  "english": "Hand"
+	},
+	{
+	  "id": 277,
+	  "hiragana": "くち",
+	  "romaji": "Kuchi",
+	  "english": "Mouth"
+	},
+	{
+	  "id": 278,
+	  "hiragana": "ときどき",
+	  "romaji": "Tokidoki",
+	  "english": "Sometimes"
+	},
+	{
+	  "id": 279,
+	  "hiragana": "ほう",
+	  "romaji": "Hou",
+	  "english": "Direction, side"
+	},
+	{
+	  "id": 280,
+	  "hiragana": "ほか",
+	  "romaji": "Hoka",
+	  "english": "Other"
+	},
+	{
+		"id": 281,
+		"hiragana": "まん",
+		"romaji": "Man",
+		"english": "Ten thousand"
+	},
+	{
+	  "id": 282,
+	  "hiragana": "みえる",
+	  "romaji": "Mieru",
+	  "english": "Can be seen"
+	},
+	{
+	  "id": 283,
+	  "hiragana": "みち",
+	  "romaji": "Michi",
+	  "english": "Road, path"
+	}
+  ]

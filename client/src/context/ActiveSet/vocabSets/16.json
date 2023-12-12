@@ -1,0 +1,122 @@
+[
+	{
+	  "id": 284,
+	  "hiragana": "め",
+	  "romaji": "Me",
+	  "english": "Eye"
+	},
+	{
+	  "id": 285,
+	  "hiragana": "とめる",
+	  "romaji": "Tomeru",
+	  "english": "Stop"
+	},
+	{
+	  "id": 286,
+	  "hiragana": "やめる",
+	  "romaji": "Yameru",
+	  "english": "Quit, stop"
+	},
+	{
+	  "id": 287,
+	  "hiragana": "わるい",
+	  "romaji": "Warui",
+	  "english": "Bad"
+	},
+	{
+	  "id": 288,
+	  "hiragana": "おてあらい",
+	  "romaji": "Otearai",
+	  "english": "Bathroom"
+	},
+	{
+	  "id": 289,
+	  "hiragana": "ほんとうに",
+	  "romaji": "Hontou ni",
+	  "english": "Really"
+	},
+	{
+	  "id": 290,
+	  "hiragana": "じぶん",
+	  "romaji": "Jibun",
+	  "english": "Self"
+	},
+	{
+	  "id": 291,
+	  "hiragana": "ため",
+	  "romaji": "Tame",
+	  "english": "Purpose"
+	},
+	{
+	  "id": 292,
+	  "hiragana": "みつかる",
+	  "romaji": "Mitsukaru",
+	  "english": "Be found, be discovered"
+	},
+	{
+	  "id": 293,
+	  "hiragana": "やすむ",
+	  "romaji": "Yasumu",
+	  "english": "Rest"
+	},
+	{
+	  "id": 294,
+	  "hiragana": "ゆっくり",
+	  "romaji": "Yukkuri",
+	  "english": "Slowly"
+	},
+	{
+	  "id": 295,
+	  "hiragana": "はな",
+	  "romaji": "Hana",
+	  "english": "Flower"
+	},
+	{
+	  "id": 296,
+	  "hiragana": "うごく",
+	  "romaji": "Ugoku",
+	  "english": "Move"
+	},
+	{
+	  "id": 297,
+	  "hiragana": "せん",
+	  "romaji": "Sen",
+	  "english": "Line"
+	},
+	{
+	  "id": 298,
+	  "hiragana": "いがい",
+	  "romaji": "Igai",
+	  "english": "Except for"
+	},
+	{
+	  "id": 299,
+	  "hiragana": "つま",
+	  "romaji": "Tsuma",
+	  "english": "Wife"
+	},
+	{
+	  "id": 300,
+	  "hiragana": "ひゃく",
+	  "romaji": "Hyaku",
+	  "english": "Hundred"
+	},
+	{
+	  "id": 301,
+	  "hiragana": "あたり",
+	  "romaji": "Atari",
+	  "english": "Vicinity"
+	},
+	{
+	  "id": 302,
+	  "hiragana": "みせ",
+	  "romaji": "Mise",
+	  "english": "Shop"
+	},
+	{
+	  "id": 303,
+	  "hiragana": "しまる",
+	  "romaji": "Shimaru",
+	  "english": "Close, shut"
+	}
+]

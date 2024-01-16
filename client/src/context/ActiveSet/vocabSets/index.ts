@@ -1,4 +1,6 @@
-const vocabSets = [
+import { VocabEntry } from "@/context/Questions/useQuestions.type"
+
+const vocabSets: Array<Array<VocabEntry>> = [
 	require('./1.json'),
 	require('./2.json'),
 	require('./3.json'),
